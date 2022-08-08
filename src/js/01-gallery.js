@@ -2,6 +2,7 @@
 import { galleryItems } from './gallery-items';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import creatMarkupOfGalleryItems from './markupOfGallery';
 
 // Change code below this line
 
@@ -11,21 +12,21 @@ const refs = {
   galleryListEl: document.querySelector('.gallery'),
 };
 
-const creatMarkupOfGalleryItems = galleryItems => {
-  return galleryItems
-    .map(({ preview, original, description }) => {
-      return `
-   <a class="gallery__item" href="${original}">
-     <img
-      class="gallery__image"
-      src="${preview}"
-      alt="${description}"
-    />
-  </a>
-`;
-    })
-    .join('');
-};
+// const creatMarkupOfGalleryItems = galleryItems => {
+//   return galleryItems
+//     .map(({ preview, original, description }) => {
+//       return `
+//    <a class="gallery__item" href="${original}">
+//      <img
+//       class="gallery__image"
+//       src="${preview}"
+//       alt="${description}"
+//     />
+//   </a>
+// `;
+//     })
+//     .join('');
+// };
 
 refs.galleryListEl.innerHTML = creatMarkupOfGalleryItems(galleryItems);
 
